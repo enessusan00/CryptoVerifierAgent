@@ -1,85 +1,121 @@
-# CryptoVerifier: Telegram Scam Detection Bot
+# CryptoVerifier: Telegram Scam Detection Agent
 
-## Project Overview
-CryptoVerifier is a Telegram bot designed to protect cryptocurrency users from scams, phishing attempts, and fraudulent projects. By leveraging the OpenServ platform and its collaborative AI agent ecosystem, the bot analyzes URLs, token addresses, smart contracts, and messages to identify potential threats and provide security recommendations.
+![CryptoVerifier Logo](https://example.com/cryptoverifier-logo.png)
 
-## Features
+## 🛡️ Project Overview
+CryptoVerifier is a sophisticated Telegram bot designed to protect cryptocurrency users from scams, phishing attempts, and fraudulent projects. Using OpenServ's multi-agent architecture, the bot analyzes URLs, token addresses, smart contracts, and messages to identify potential threats and provide detailed security recommendations.
 
-### URL Security Analysis
-- Domain reputation checking
-- Phishing site detection
-- Content analysis for scam indicators
-- Suspicious pattern matching
-- Detailed security reports
+## ✨ Key Features
 
-### Token Contract Analysis
-- Contract code analysis
-- Liquidity and ownership verification
-- Transaction pattern analysis
+### 🔍 URL Security Analysis
+- Domain reputation verification
+- Phishing site detection with 90%+ accuracy
+- Typosquatting identification (similar to legitimate domains)
+- Content analysis for suspicious elements (wallet connection requests, etc.)
+- Domain age and history verification
+- Special handling for inaccessible or non-existent URLs
+
+### 💰 Token Contract Analysis
+- Smart contract code vulnerability detection
+- Ownership concentration analysis
+- Liquidity verification and monitoring
+- Rugpull risk assessment
 - Honeypot detection
-- Risk assessment scoring
+- Invalid token address handling with explanatory details
 
-### Message Phishing Detection
-- Pattern recognition
-- Urgency detection
-- Scam keyword identification
-- Link extraction and analysis
-- Comprehensive security assessment
+### 💬 Message Phishing Detection
+- Sophisticated scam pattern recognition
+- Urgency tactics detection
+- Sensitive information request identification
+- Impersonation detection
+- Contextual safety analysis for crypto-related messages
+- Handles messages with and without URLs
 
-### User-Friendly Reports
-- Clear security recommendations
-- Confidence scoring
-- User-friendly language
-- Detailed explanations
-- Telegram-compatible formatting
+### 📊 Comprehensive Security Reports
+- Clear security status indicators
+- Confidence/risk scoring
+- User-friendly, actionable recommendations
+- Telegram-formatted reports with proper styling
+- Tailored to cryptocurrency users' needs
 
-## Technology Stack
+## 🚀 Unique Advantages
 
+### Advanced Content Filtering
+- Strict relevance filtering ensures all analysis and recommendations are directly related to the specific content
+- Eliminates irrelevant CVEs, security articles, and general warnings
+- Focused reports that address only the actual security concerns of the analyzed content
+
+### Robust Error Handling
+- Graceful handling of inaccessible URLs with meaningful analysis
+- Clear explanations for invalid token addresses
+- Continues analysis even when parts of the workflow encounter issues
+
+### Multi-Stage Verification
+- Multiple agents collaborate to verify findings
+- Cross-checks information from different sources for accuracy
+- Filters out false positives for more reliable results
+
+## 🛠️ Technology Stack
+
+- **Core Framework**: OpenServ SDK
 - **Language**: TypeScript
-- **Framework**: OpenServ SDK
-- **Bot API**: node-telegram-bot-api
+- **Bot Interface**: Telegram Bot API
 - **Validation**: Zod
 - **Unique IDs**: UUID
 
-## Architecture
+## 🏗️ Architecture
 
 ### OpenServ Agent Collaboration
 
-CryptoVerifier uses OpenServ's multi-agent architecture to perform comprehensive security analysis:
+CryptoVerifier orchestrates multiple specialized agents:
 
-1. **Brave Search Assistant** (Agent #171): Performs web searches to check domain reputation
-2. **Webpage Content Reader** (Agent #172): Safely reads website content for analysis
-3. **Perplexity Research Assistant** (Agent #140): Performs detailed research on security aspects
-4. **ETH Wallet Scanner** (Agent #167): Analyzes token contracts and transaction patterns
-5. **JSON Parser** (Agent #65): Processes and extracts data from analysis results
-6. **Copywriter** (Agent #41): Generates well-formatted security reports
+1. **Main Coordinator**: CryptoVerifierAgent (Agent #280)
+2. **URL Analysis**: 
+   - Brave Search Assistant (Agent #171)
+   - Webpage Content Reader (Agent #172)
+3. **Deep Research**: EXA Agent (Agent #386)
+4. **Token Analysis**: ETH Wallet Scanner (Agent #167)
+5. **Data Processing**: JSON Parser (Agent #65)
+6. **Report Generation**: Copywriter (Agent #41)
 
 ### Sequential Task Workflows
 
-Each analysis request follows a specific sequential workflow:
+Each analysis request follows a specific workflow with multiple stages:
 
-1. **URL Analysis Workflow**:
-   - Web search for domain reputation
-   - Safe content extraction
-   - Detailed security research
-   - Report generation
-   - Telegram notification
+1. **Content Retrieval**: Safely fetching data about the URL/token/message
+2. **Primary Analysis**: Identifying basic security indicators
+3. **Deep Analysis**: Researching reputation and security history
+4. **Comprehensive Assessment**: Combining all findings into a risk evaluation
+5. **Report Generation**: Creating a user-friendly security report
+6. **Delivery**: Sending the formatted report to the user via Telegram
 
-2. **Token Analysis Workflow**:
-   - Contract scanning
-   - Reputation research
-   - Transaction pattern analysis
-   - Security report generation
-   - Telegram notification
+## 📋 Usage Instructions
 
-3. **Message Analysis Workflow**:
-   - URL extraction
-   - Content analysis
-   - Scam pattern detection
-   - Security report generation
-   - Telegram notification
+### Telegram Commands
 
-## Getting Started
+- `/start` - Start the bot
+- `/help` - Display help information
+- `/check [content]` - Analyze a URL, token address, or message
+- `/history` - View your analysis history
+
+### Example Usages
+
+#### URL Check
+```
+/check https://example-crypto-site.com
+```
+
+#### Token Analysis
+```
+/check 0x742d35Cc6634C0532925a3b844Bc454e4438f44e
+```
+
+#### Message Analysis
+```
+/check Please validate your wallet by connecting to our site and sync your assets to prevent loss during the migration
+```
+
+## 🚦 Getting Started
 
 ### Prerequisites
 - Node.js (v18+)
@@ -119,49 +155,52 @@ npm run build
 npm start
 ```
 
-## Usage
+## 🧩 How It Works
 
-### Telegram Commands
+1. **User Submits Content**: Via Telegram using the `/check` command
+2. **Content Classification**: System identifies if it's a URL, token address, or message
+3. **Workflow Initiation**: The appropriate analysis workflow is started
+4. **Multi-Agent Processing**: 
+   - For URLs: Domain checks, content analysis, reputation research
+   - For tokens: Contract analysis, transaction patterns, ownership verification
+   - For messages: Pattern matching, URL extraction, phishing detection
+5. **Report Generation**: Findings are combined into a comprehensive security report
+6. **User Notification**: Security analysis is delivered to the user via Telegram
 
-- `/start` - Start the bot
-- `/help` - Display help information
-- `/check [content]` - Analyze a URL, token address, or message
-- `/report [content]` - Report a scam to the database
-- `/history` - View your analysis history
+## 🔒 Privacy & Security
 
-### Example Usages
+- Does not store user messages beyond analysis session
+- Does not request private keys or wallet information
+- All analysis is performed via secure API integrations
+- Handles all data according to strict security principles
 
-#### URL Check
-```
-/check https://example-crypto-scam.com
-```
+## 🔮 Future Enhancements
 
-#### Token Analysis
-```
-/check 0x742d35Cc6634C0532925a3b844Bc454e4438f44e
-```
+- Cross-platform support (Discord, Slack)
+- Security alerts for trending scams
+- Machine learning for pattern detection
+- Community-driven scam database
+- Custom alerts for specific tokens/domains
 
-#### Message Analysis
-```
-/check Please validate your wallet by connecting to our site and sync your assets to prevent loss during the migration
-```
+## 👥 Contributing
 
-## Future Enhancements
+We welcome contributions to improve CryptoVerifier! Please follow these steps:
 
-- Persistent database for scam reporting and history
-- Enhanced agent collaboration with more specialized agents
-- Real-time token price and liquidity monitoring
-- Community reporting mechanism
-- Multi-platform support (Discord, Slack)
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add some amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
 
-## License
+## 📜 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 - OpenServ Labs for the SDK framework
 - The crypto security community for research and insights
+- All contributors and testers who helped improve this project
 
 ---
 

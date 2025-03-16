@@ -1,7 +1,6 @@
 # CryptoVerifier: Telegram Scam Detection Agent
 
-![a-circular-logo-with-a-deep-blue-shield-_STW75hXpR9GQcUMedTJaPQ_3oWw9DUfS3egT97Ofpor5Q 1](https://github.com/user-attachments/assets/99d7f81e-5612-4428-b2db-9e769e3c12e3)
-
+<img src="https://github.com/user-attachments/assets/99d7f81e-5612-4428-b2db-9e769e3c12e3" width="200" alt="CryptoVerifier Logo">
 
 ## 🛡️ Project Overview
 CryptoVerifier is a sophisticated Telegram bot designed to protect cryptocurrency users from scams, phishing attempts, and fraudulent projects. Using OpenServ's multi-agent architecture, the bot analyzes URLs, token addresses, smart contracts, and messages to identify potential threats and provide detailed security recommendations.
